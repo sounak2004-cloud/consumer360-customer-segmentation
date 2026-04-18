@@ -1,6 +1,6 @@
 USE your_database_name;
 
--- Indexes for fact table (most important)
+-- Indexes for fact table 
 
 CREATE INDEX idx_fact_customer 
 ON fact_sales(customer_id);
