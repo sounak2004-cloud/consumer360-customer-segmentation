@@ -1,3 +1,6 @@
+################# Open CMD and load the below #################
+
+# pip install mysql-connector-python pandas # 
 
 ################# SQL Connector #################
 import mysql.connector
