@@ -1,0 +1,14 @@
+Max Revenue =
+MAX(Sales[Revenue])
+
+Min Revenue =
+MIN(Sales[Revenue])
+
+Average Revenue =
+AVERAGE(Sales[Revenue])
+
+Total Profit =
+SUM(Sales[Profit])
+
+Profit Margin % =
+DIVIDE([Total Profit], [Total Revenue])
