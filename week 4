@@ -1,1 +1,45 @@
-.
+Total Revenue =
+SUM(Sales[Revenue])
+
+Total Orders =
+DISTINCTCOUNT(Sales[OrderID])
+
+Total Customers =
+DISTINCTCOUNT(Sales[CustomerID])
+
+Average Order Value =
+DIVIDE([Total Revenue], [Total Orders])
+
+Current Month Revenue =
+CALCULATE(
+    [Total Revenue],
+    MONTH(Sales[OrderDate]) = MONTH(TODAY()),
+    YEAR(Sales[OrderDate]) = YEAR(TODAY())
+)
+
+Previous Month Revenue =
+CALCULATE(
+    [Total Revenue],
+    PREVIOUSMONTH(Sales[OrderDate])
+)
+
+MoM Growth % =
+DIVIDE(
+    [Current Month Revenue] - [Previous Month Revenue],
+    [Previous Month Revenue]
+)
+
+Revenue Per Customer =
+DIVIDE([Total Revenue], [Total Customers])
+
+Revenue YTD =
+TOTALYTD(
+    [Total Revenue],
+    Sales[OrderDate]
+)
+
+Top Customer Revenue =
+MAXX(
+    VALUES(Sales[CustomerName]),
+    [Total Revenue]
+)
